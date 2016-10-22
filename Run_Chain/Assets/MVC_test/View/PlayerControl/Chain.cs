@@ -10,6 +10,8 @@ public class Chain : MonoBehaviour {
 	void Start () {
 		child_sphere = this.transform.FindChild (Tags.chain.Sphere).gameObject;
 		preAngle = child_sphere.transform.localEulerAngles.z;
+
+		InvokeRepeating("DestorySelf",0,0.1f);
 	}
 
 	void Update () {
@@ -19,6 +21,15 @@ public class Chain : MonoBehaviour {
 		}
 	    else
 			preAngle = child_sphere.transform.localEulerAngles.z;
+	}
+
+	void DestorySelf()
+	{
+		Vector3 vector3 =  Camera.main.WorldToViewportPoint(this.gameObject.transform.position);
+		if (vector3.x < 0 || vector3.y < 0)
+		{
+			DestroyImmediate(this.gameObject);
+		}
 	}
 
 	public void setLong(float distance){

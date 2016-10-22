@@ -37,9 +37,16 @@ public class Boss : MonoBehaviour {
 			count++;
 		}
 		if(count==2){
+			rend.material.SetColor("_SpecColor", Color.green);
+		}
+		if(count==3){
+			rend.material.SetColor("_SpecColor", Color.gray);
+		}
+		if(count==4){
 			rend.material.SetColor("_SpecColor", Color.blue);
 		}
-		if(count==3)
+
+		if(count==5)
 			Destroy(this.gameObject);
 
 	}

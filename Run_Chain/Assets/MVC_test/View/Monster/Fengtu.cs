@@ -30,7 +30,7 @@ public class Fengtu : MonoBehaviour {
 
         //判断与主角的距离，进行攻击
         float dist = (transform.position - other.position).magnitude;
-        if (-0.1 < dist -1.5  && dist - 1.5 < 0.1&&!isFight)
+        if (-0.1 < dist -1.5  && dist - 1.5 <0.1&&!isFight)
         {
 			anim.SetBool(Tags.animator_monster.atk,true); isFight = true;
         }
