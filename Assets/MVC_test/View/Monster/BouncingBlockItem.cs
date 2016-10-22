@@ -2,12 +2,13 @@
 using System.Collections;
 using System;
 
-public class Chengguan : MonoBehaviour
+public class BouncingBlockItem : MonoBehaviour
 {
+
     Vector3 tf;
     double x;
     // Use this for initialization
-    void Awake()
+    void Start()
     {
 
     }
@@ -18,7 +19,7 @@ public class Chengguan : MonoBehaviour
 
         x += Time.deltaTime;
         tf = GetComponent<Transform>().position;
-        tf.y = 1.5f + (float)Math.Sin(x) * 0.5f;
+        tf.y = 1.2f + (float)Math.Sin(x) * 0.5f;
         GetComponent<Transform>().position = tf;
     }
 }
