@@ -74,7 +74,7 @@ namespace PureMVC.Patterns
 			Type t = context.GetType();
 			BindingFlags f = BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase;
 			MethodInfo mi = t.GetMethod(method, f);
-			mi.Invoke(context, new object[] { notification });
+ 			mi.Invoke(context, new object[] { notification });
 		}
 
 		/// <summary>

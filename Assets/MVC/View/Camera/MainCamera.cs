@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Camera : MonoBehaviour {
-
+public class MainCamera : MonoBehaviour {
+	
 	// Use this for initialization
 	public GameObject player;
 	void Start () {
@@ -14,8 +14,9 @@ public class Camera : MonoBehaviour {
 	void LateUpdate () {
 		RunFacade.getInstance.sendNotificationCommand(NotificationConstant.CameraCommand.CameraMove);
 	}
-
+	
 	public GameObject getPlayer(){
 		return player;
 	}
+	
 }
