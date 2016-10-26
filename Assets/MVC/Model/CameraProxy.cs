@@ -20,4 +20,8 @@ public class CameraProxy : Proxy {
 		SendNotification(NotificationConstant.CameraMediator.CameraFollowMove, Data);  
 	}
 
+	public void ReStart(){
+		Data.isReStart = true;
+	}
+
 }

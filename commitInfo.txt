@@ -1,3 +1,0 @@
-This is commit third.
-This is commit forth.
-This is commit fifth.

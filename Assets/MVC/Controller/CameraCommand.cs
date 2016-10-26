@@ -8,12 +8,20 @@ public class CameraCommand : SimpleCommand{
 	
 	public override void Execute(PureMVC.Interfaces.INotification notification)  
 	{  
+		CameraProxy proxy = (CameraProxy)Facade.RetrieveProxy("CameraProxy");//通过名字获取Proxy
+
 		switch (notification.Name) {
 		case NotificationConstant.CameraCommand.CameraMove:
 		{
-			CameraProxy proxy = (CameraProxy)Facade.RetrieveProxy("CameraProxy");//通过名字获取Proxy
 			proxy.CamerMove();
 		}break;
+
+		case NotificationConstant.CameraCommand.ReStartCameraCommond:
+		{
+			proxy.ReStart();
+		}break;
+
+
 			
 		}  
 	}

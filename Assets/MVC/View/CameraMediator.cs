@@ -8,14 +8,14 @@ public class CameraMediator : Mediator{
 	
 	public new const string NAME = "CameraMediator";  
 	 
-	public GameObject Main_Camera;
-	public GameObject player;
+	static GameObject Main_Camera;  //必须加static，否则重新游戏时会出错
+	static GameObject player;
 	
+
 	public CameraMediator(GameObject root) : base(NAME)  
 	{  
 		Main_Camera = root;
-		player = GameUtility.GetComponent<Camera> (root).getPlayer ();
-
+		player = GameUtility.GetComponent<MainCamera> (root).getPlayer ();
 	}  
 	
 	public override IList<string> ListNotificationInterests()  
@@ -45,13 +45,15 @@ public class CameraMediator : Mediator{
 
 		case NotificationConstant.CameraMediator.CameraFollowMove:
 		{   
-			Main_Camera.transform.position = cb.player_camera_distance+new Vector3(player.transform.position.x,0,0);
+			if(!cb.isReStart){
+				Main_Camera.transform.position = cb.player_camera_distance+new Vector3(player.transform.position.x,0,0);
+			}
 
 		}break;
 
-			
-			
 		}  
 		
 	}  
+
+	  
 }  
