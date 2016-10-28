@@ -38,6 +38,8 @@ public class PlayerMediator : Mediator{
 
 		list.Add(NotificationConstant.playerMediator.AtkMediator);
 		list.Add(NotificationConstant.playerMediator.HitMediator);
+		list.Add(NotificationConstant.playerMediator.RunMediator);
+		list.Add(NotificationConstant.playerMediator.FallMediator);
 
 
 
@@ -60,9 +62,11 @@ public class PlayerMediator : Mediator{
 			{   
 				if(player_ac.GetBool (Tags.animator_player.Jump)==false){
 					player_rigidboy.velocity=new Vector3(0,pb.jump_Velocity,0);
+				//player_rigidboy.AddForce(new Vector3(0,pb.jump_Velocity*40,0));
 					player_ac.SetBool(Tags.animator_player.Jump,true);
 				}else if(player_ac.GetBool (Tags.animator_player.Jump2)==false){//二段跳
-				    player_rigidboy.velocity=new Vector3(0,pb.jump_Velocity,0);
+				player_rigidboy.velocity=new Vector3(0,pb.jump_Velocity,0);
+				//player_rigidboy.AddForce(new Vector3(0,pb.jump_Velocity*40,0));
 				    player_ac.SetBool(Tags.animator_player.Jump2,true);
 				    player_ac.SetBool(Tags.animator_player.Jump,false);
 				} 

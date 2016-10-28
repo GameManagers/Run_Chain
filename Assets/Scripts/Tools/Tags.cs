@@ -28,6 +28,8 @@ public class Tags{
 
 		public const string UI="UI";
 		public const string Terrain="Terrain";
+
+		public const string Coin="Coin";
 	};
 	
 	public struct layer{
@@ -64,6 +66,7 @@ public class Tags{
 
 		public const string isAtk="isAtk";
 		public const string isHit="isHit";
+		public const string isRun="isRun";
 	};
 	
 	/*怪兽动画变量*/

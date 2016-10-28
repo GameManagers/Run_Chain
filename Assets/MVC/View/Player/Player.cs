@@ -19,6 +19,9 @@ public class Player : MonoBehaviour {
 	void OnCollisionEnter(Collision other) {//任务碰撞检测
 
 		if (other.collider.CompareTag (Tags.tag.Base)) {//碰到地面
+		//	RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerMediator.RunMediator);
+		//	Debug.Log("run");
+
 			RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerCommand.CollisionBaseCommond);
 		}
 
@@ -36,6 +39,12 @@ public class Player : MonoBehaviour {
 			RunFacade.getInstance.sendNotificationCommand(NotificationConstant.MonsterCommand.MonsterAtk);
 			RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerMediator.HitMediator);
 		}
+		if(other.collider.tag.Equals (Tags.tag.Coin)){//碰到金币
+			DestroyGameObject(other.gameObject);
+			Debug.Log("coin");
+			
+		}
+
 
 		
 	}
@@ -46,7 +55,9 @@ public class Player : MonoBehaviour {
 		{
 			RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerCommand.CollisionStay);
 	    }
+
     }
+
 
 	void OnTriggerEnter(Collider other){
 
@@ -56,6 +67,8 @@ public class Player : MonoBehaviour {
 			RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerCommand.AtkMonsterArea,past);
 	
 		}
+
+
 	}
 
 	public void CreatChain(Vector3 connect_point,float angle){

@@ -83,6 +83,8 @@ public class NotificationConstant{
 
 		public const string AtkMediator="AtkMediator";
 		public const string HitMediator="HitMediator";
+		public const string RunMediator="RunMediator";
+		public const string FallMediator="FallMediator";
 
 
 	}
