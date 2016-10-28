@@ -8,9 +8,42 @@ public class MonsterItem : MonoBehaviour {
 	bool playerInRange;
 	GameObject player;
 
-	PastSingle past;
+    private int id;
 
-	void Start () {
+    private string name;
+
+    public float timeBetweenAttacks = 0.5f;
+    public int attackDamage = 10;
+
+    PastSingle past;
+
+    public int Id
+    {
+        get
+        {
+            return id;
+        }
+
+        set
+        {
+            id = value;
+        }
+    }
+
+    public string Name
+    {
+        get
+        {
+            return name;
+        }
+
+        set
+        {
+            name = value;
+        }
+    }
+
+    void Start () {
 		past = new PastSingle (this.gameObject);
 		player = GameObject.FindGameObjectWithTag(Tags.tag.Player);
 	}

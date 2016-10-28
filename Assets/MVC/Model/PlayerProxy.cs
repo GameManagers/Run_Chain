@@ -100,7 +100,6 @@ public class PlayerProxy : Proxy {
 	}
 
 	public void atkMonster(PastSingle past){
-		SendNotification(NotificationConstant.playerMediator.AtkMediator,Data);
 		if (Data.curMonster!= null) {
 
 			if(Data.curMonster.name.Equals(Tags.monster_type.smallBoss)){
@@ -117,7 +116,7 @@ public class PlayerProxy : Proxy {
 			SendNotification(NotificationConstant.UIMediator.ChangeButtonColor, pastColor);
 		}
 	}
-	
+
 	public void ChangeHp(PastSingle past){
 		if (past.i < 0) {
 			int temp=past.i+Data.Cover;

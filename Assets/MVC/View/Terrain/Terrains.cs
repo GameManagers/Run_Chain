@@ -20,5 +20,9 @@ public class Terrains : MonoBehaviour {
 	public void InstanceTerrain(GameObject terrain){
 		Instantiate (terrain);
 	}
+    public void InstanceCoin(GameObject coin,Transform parenTransform)
+    {
+        Instantiate(coin).transform.SetParent(parenTransform);
+    }
 
 }
