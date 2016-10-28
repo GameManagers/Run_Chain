@@ -34,6 +34,7 @@ public class Player : MonoBehaviour {
 
 		if (other.collider.tag.Equals (Tags.tag.Monster)) {//碰到怪兽
 			RunFacade.getInstance.sendNotificationCommand(NotificationConstant.MonsterCommand.MonsterAtk);
+			RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerMediator.HitMediator);
 		}
 
 		
@@ -65,6 +66,7 @@ public class Player : MonoBehaviour {
 	/*攻击*/
 	public void AtkButtonDown(){
 		RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerCommand.AtkMonster,past);
+		RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerMediator.AtkMediator,past);
 	}
 
 

@@ -61,6 +61,9 @@ public class Tags{
 		public const string Jump2 = "Jump2";
 		public const string Fall = "Fall";
 		public const string Fall2 = "Fall2";
+
+		public const string isAtk="isAtk";
+		public const string isHit="isHit";
 	};
 	
 	/*怪兽动画变量*/

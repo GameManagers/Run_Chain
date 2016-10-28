@@ -36,6 +36,10 @@ public class PlayerMediator : Mediator{
 		list.Add (NotificationConstant.playerMediator.AddCharacterJoint);
 		list.Add (NotificationConstant.playerMediator.DeleteCharacterJoint);
 
+		list.Add(NotificationConstant.playerMediator.AtkMediator);
+		list.Add(NotificationConstant.playerMediator.HitMediator);
+
+
 
 		return list;  
 	}  
@@ -64,7 +68,17 @@ public class PlayerMediator : Mediator{
 				} 
 			}break;
 
+		case NotificationConstant.playerMediator.AtkMediator:
+		{
+			player_ac.SetTrigger(Tags.animator_player.isAtk);
+		}break;
+		case NotificationConstant.playerMediator.HitMediator:
+		{
+			player_ac.SetTrigger(Tags.animator_player.isHit);
 
+		}break;
+
+	
 		case NotificationConstant.playerMediator.ResetJumpAnimator:
 			{   
 			   player_ac.SetBool (Tags.animator_player.Jump, false);

@@ -20,6 +20,9 @@ public class NotificationConstant{
 		public const string DiedCommond = "DiedCommond";
 		public const string CollisionStay = "CollisionStay";
 
+
+		public const string AtkCommand="AtkCommand";
+
 		public const string MouseLeftDown = "MouseLeftDown";
 		public const string MouseLeftUP = "MouseLeftUP";
 
@@ -77,6 +80,10 @@ public class NotificationConstant{
 		public const string JudgeCreatChain = "JudgeCreatChain";
 		public const string AddCharacterJoint = "AddCharacterJoint";
 		public const string DeleteCharacterJoint = "DeleteCharacterJoint";
+
+		public const string AtkMediator="AtkMediator";
+		public const string HitMediator="HitMediator";
+
 
 	}
 
