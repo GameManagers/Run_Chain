@@ -9,8 +9,9 @@ public class Map : MonoBehaviour {
 	public int id{ get; set;}// ID
 	public MapType mapType{ get; set;} // 地图类型
 	public string name{ get; set;}  // 地图名字
-    
 
+    public Transform[] CoinTransforms;
+    public Transform[] EnemyTransforms;
     void Start () {
          GameObject playerGo = GameObject.FindGameObjectWithTag(Tags.tag.Player);
 		 Terrain = GameObject.FindGameObjectWithTag(Tags.tag.Terrain);
@@ -22,7 +23,7 @@ public class Map : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if (player.transform.position.x > this.gameObject.transform.position.x+250)
+	    if (player.transform.position.x > this.gameObject.transform.position.x+65)
 	    {
             Destroy(this.gameObject);
 			PastSingle past=new PastSingle(Terrain);

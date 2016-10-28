@@ -5,7 +5,7 @@ using PureMVC.Patterns;
 public class MonsterProxy : Proxy {
 	public new const string NAME = "MonsterProxy"; 
 	public MonsterBasic Data { get; set; }  
-
+   
 	public MonsterProxy() : base(NAME)  
 	{  
 		Data = new MonsterBasic();   

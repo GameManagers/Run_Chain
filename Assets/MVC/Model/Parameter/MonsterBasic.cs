@@ -6,10 +6,11 @@ public class MonsterBasic{
 
 	public int monsterCount{get;set;}
 	public GameObject[] monsters{get;set;}
-	public int monsterAtkForce{get;set;}
+    public int monsterAtkForce;
 
-
-	public MonsterBasic(){
+ 
+    public MonsterBasic()
+    {
 
 		monsterCount = 0;
 		monsterAtkForce = 10;

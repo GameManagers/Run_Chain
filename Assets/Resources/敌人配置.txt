@@ -1,0 +1,3 @@
+1	Monster_Chengguan	0.5	10
+2	Monster_Fengtu	0.5	10
+3	Monster_Shuidi	0.5	10

@@ -17,10 +17,10 @@ public class TerrainCommand : SimpleCommand{
 			proxy.SetMapBasic(past);
 		}break;
 
-		case NotificationConstant.TerrainCommand.InitMap:
-		{
-			proxy.InitMap();
-		}break;
+		//case NotificationConstant.TerrainCommand.InitMap:
+		//{
+		//	proxy.InitMap();
+		//}break;
 
 		case NotificationConstant.TerrainCommand.UpdateMap:
 		{

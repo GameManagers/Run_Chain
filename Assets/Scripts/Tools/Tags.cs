@@ -48,7 +48,11 @@ public class Tags{
 		public const string Map_Normal_path="pfb/Normal/";
 		public const string Map_Double_path="pfb/double/";
 		public const string Map_Chains_path="pfb/chains/";
-	};
+        public const string Jinbi_path = "pfb/jinbi/";
+        public const string Enemy_path = "pfb/";
+
+
+    };
 
 	
 	
@@ -61,9 +65,6 @@ public class Tags{
 		public const string Jump2 = "Jump2";
 		public const string Fall = "Fall";
 		public const string Fall2 = "Fall2";
-
-		public const string isAtk="isAtk";
-		public const string isHit="isHit";
 	};
 	
 	/*怪兽动画变量*/
@@ -85,8 +86,11 @@ public class Tags{
 	
 
 	public struct resources{
-		public const string TextAsset="地图配置";
-	}
+        public const string TextAsset = "地图配置";
+        public const string JinbiAsset = "金币配置";
+        public const string EnemyAsset = "敌人配置";
+        public const string BossAsset = "";
+    }
 
 
 	
