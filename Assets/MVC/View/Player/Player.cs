@@ -22,7 +22,7 @@ public class Player : MonoBehaviour {
 			RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerCommand.CollisionBaseCommond);
 		}
 
-		if(other.collider.CompareTag(Tags.tag.surfice)){//碰到底部 死亡
+		if(other.collider.CompareTag(Tags.tag.bottom)){//碰到底部 死亡
 			RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerCommand.DiedCommond);
 			RunFacade.getInstance.sendNotificationCommand(NotificationConstant.CameraCommand.ReStartCameraCommond);
 		}
