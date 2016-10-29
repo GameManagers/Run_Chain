@@ -14,7 +14,11 @@ public class Tags{
 		//地形
 		public const string Base = "Base";
 		public const string Bg = "Bg";
-		public const string surfice="surfice";
+		public const string top="Top";
+		public const string bottom="Bottom";
+		public const string tool="Tool";
+		public const string coin="Coin";
+		public const string environment="Environment";
 		public const string zhangaiwu = "zhangaiwu";
 
 		//人物
@@ -22,7 +26,6 @@ public class Tags{
 		public const string Chain = "Chain";
 		
 		//怪兽
-		//public const string smallBoss="smallBoss";
 		public const string Monster = "Monster";
 		public const string Shoot="Shoot";
 
