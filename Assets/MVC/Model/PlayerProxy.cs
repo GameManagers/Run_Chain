@@ -105,10 +105,10 @@ public class PlayerProxy : Proxy {
 			if(Data.curMonster.name.Equals(Tags.monster_type.smallBoss)){
 				Data.curMonster.GetComponent<SmallBoss>().Rebound(Data.smallBossRe);
 			}else{
-				past.obj.GetComponent<Player>().DestroyGameObject(Data.curMonster);
-			}
+                Data.curMonster.GetComponent<MonsterItem>().die();
+            }
 
-			Data.Monster+=1;
+            Data.Monster+=1;
 			Data.TriggerTimes=0;
 			Data.curMonster=null;
 			SendNotification(NotificationConstant.UIMediator.ChangeMonsterCount, Data);
