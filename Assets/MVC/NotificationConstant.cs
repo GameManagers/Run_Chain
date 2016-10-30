@@ -20,7 +20,6 @@ public class NotificationConstant{
 		public const string DiedCommond = "DiedCommond";
 		public const string CollisionStay = "CollisionStay";
 
-
 		public const string AtkCommand="AtkCommand";
 
 		public const string MouseLeftDown = "MouseLeftDown";
@@ -31,8 +30,8 @@ public class NotificationConstant{
 		public const string AtkMonsterArea = "AtkMonsterArea";
 		public const string JuageMonsterDistance = "JuageMonsterDistance";
 		public const string AtkMonster = "AtkMonster";
-
-		public const string ChangeHp = "ChangeHp";
+        public const string ChangeCoin = "ChangeCoin";
+        public const string ChangeHp = "ChangeHp";
 	}
 
 
@@ -80,24 +79,17 @@ public class NotificationConstant{
 		public const string JudgeCreatChain = "JudgeCreatChain";
 		public const string AddCharacterJoint = "AddCharacterJoint";
 		public const string DeleteCharacterJoint = "DeleteCharacterJoint";
-
 		public const string AtkMediator="AtkMediator";
 		public const string HitMediator="HitMediator";
-
-
 	}
-
-
 
 	public struct UIMediator{
 		public const string ChangeButtonColor= "ChangeButtonColor";
 		public const string ChangeMonsterCount= "ChangeMonsterCount";
 		public const string ChangeHpUI= "ChangeHpUI";
-	}
+        public const string ChangeCoinCount = "ChangeCoinCount";
+    }
 
-
-
-	
 	public struct CameraMediator{
 		public const string CameraFollowMove = "CameraFollowMove";
 		public const string SetCameraPlayerDistance = "SetCameraPlayerDistance";
@@ -106,13 +98,10 @@ public class NotificationConstant{
 		public const string GetMouseLeftUP = "GetMouseLeftUP";
 
 	}
-
-
 	
 	public struct TerrainMediator{
-
-	}
-
+        public const string ChangeCoinCompent = "ChangeCoinCompent";
+    }
 
 	public struct MonsterMediator{
 		public const string ChangeMonsterCompent = "ChangeMonsterCompent";

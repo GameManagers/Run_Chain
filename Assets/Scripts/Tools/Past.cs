@@ -59,6 +59,17 @@ public class PastMonsterCompent{
 	}
 }
 
+public class PastCoinCompent
+{
+    public GameObject coin;
+    public bool isTrigger;
+    public PastCoinCompent(GameObject m, bool t)
+    {
+        coin = m;
+        isTrigger = t;
+    }
+}
+
 public class PastAnimator{
 	public GameObject monster;
 	public string type;

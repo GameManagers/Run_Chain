@@ -53,21 +53,17 @@ public class MonsterItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         RunFacade.getInstance.sendNotificationCommand(NotificationConstant.MonsterMediator.MonsterMove, past);
         JuageDistance();
-
     }
 
     void JuageDistance()
     {
-
         //判断与主角的距离，进行攻击
         float dist = (transform.position - player.transform.position).magnitude;
 
         if (0 < dist - 3.5 && dist - 3.5 < 0.1 && !isFight)
-        {//prophet改动
+        {
             PastAnimator pastA = new PastAnimator(this.gameObject, Tags.animator_type.Bool, Tags.animator_monster.atk, true);
             RunFacade.getInstance.sendNotificationCommand(NotificationConstant.MonsterMediator.ChangeMonsterAnimation, pastA);
             isFight = true;
@@ -90,7 +86,6 @@ public class MonsterItem : MonoBehaviour
                 {//撞到主角
                     PastMonsterCompent past = new PastMonsterCompent(this.gameObject, true, true);
                     RunFacade.getInstance.sendNotificationCommand(NotificationConstant.MonsterMediator.ChangeMonsterCompent, past);
-
                 }
                 break;
         }
