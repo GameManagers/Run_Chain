@@ -81,7 +81,7 @@ public class Tags{
 		public const string fly = "fly";
 		public const string rabbit = "rabbit";
 		public const string water = "water";
-		public const string Boss = "Boss";
+		public const string Boss = "Boss(Clone)";
 		public const string smallBoss = "smallBoss(Clone)";
 	};
 
@@ -92,7 +92,7 @@ public class Tags{
         public const string TextAsset = "地图配置";
         public const string JinbiAsset = "金币配置";
         public const string EnemyAsset = "敌人配置";
-        public const string BossAsset = "";
+        public const string BossAsset = "BOSS难度";
     }
 
 
