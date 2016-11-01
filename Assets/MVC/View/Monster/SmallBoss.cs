@@ -17,6 +17,9 @@ public class SmallBoss : MonoBehaviour {
 		if (collision.collider.name == Tags.monster_type.Boss) {
 			Destroy(gameObject);
 		}
+		if(collision.collider.name == Tags.tag.Player) {
+			Destroy(gameObject);
+		}
 		
 	}
 
