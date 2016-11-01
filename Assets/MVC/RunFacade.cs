@@ -66,7 +66,8 @@ public class RunFacade : Facade,IFacade {
 		RegisterCommand(NotificationConstant.playerCommand.JuageMonsterDistance,typeof(PlayerCommand));
 		RegisterCommand(NotificationConstant.playerCommand.AtkMonster,typeof(PlayerCommand));
 		RegisterCommand(NotificationConstant.playerCommand.ChangeHp,typeof(PlayerCommand));
-	}
+        RegisterCommand(NotificationConstant.playerCommand.ChangeCoin, typeof(PlayerCommand));
+    }
 
 	void addRegisterCameraCommand(){
 		RegisterCommand(NotificationConstant.CameraCommand.CameraMove,typeof(CameraCommand));

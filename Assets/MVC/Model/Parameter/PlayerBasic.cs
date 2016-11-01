@@ -30,8 +30,8 @@ public class PlayerBasic{
 	public float timer{get;set;}//被卡住的时间
 
 	public GameObject curMonster{get;set;}//当前进入攻击范围的怪兽
-
-	public Vector3 smallBossRe{get;set;}//使小怪返回的力
+    public GameObject Coins { get; set; }//当主角收获金币
+    public Vector3 smallBossRe{get;set;}//使小怪返回的力
 	//past
 	public float angle{get;set;}//要创建的锁链的角度
 	public Vector3 mouse_down{get;set;}//按下时的位置
@@ -57,8 +57,9 @@ public class PlayerBasic{
 		timer = 0;
 
 		curMonster = null;
+        Coins = null;
 
-		mouse_down = Vector3.zero;
+        mouse_down = Vector3.zero;
 		smallBossRe=new Vector3 (2000,520,0);
 
 	}
