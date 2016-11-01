@@ -26,13 +26,17 @@ public class NotificationConstant{
 		public const string MouseLeftDown = "MouseLeftDown";
 		public const string MouseLeftUP = "MouseLeftUP";
 
-		public const string OnChainCommand = "OnChainCommand";
 
 		public const string AtkMonsterArea = "AtkMonsterArea";
 		public const string JuageMonsterDistance = "JuageMonsterDistance";
 		public const string AtkMonster = "AtkMonster";
 
 		public const string ChangeHp = "ChangeHp";
+
+		public const string ChainStateToFallState = "ChainStateToFallState";
+		public const string ResetJumpData = "ResetJumpData";
+
+
 	}
 
 
@@ -77,12 +81,16 @@ public class NotificationConstant{
 		public const string JumpMediator = "JumpMediator";
 		public const string ResetJumpAnimator = "ResetJumpAnimator";
 		public const string ReStart = "ReStart";
-		public const string JudgeCreatChain = "JudgeCreatChain";
-		public const string AddCharacterJoint = "AddCharacterJoint";
-		public const string DeleteCharacterJoint = "DeleteCharacterJoint";
+
 
 		public const string AtkMediator="AtkMediator";
 		public const string HitMediator="HitMediator";
+
+		public const string CreatRope="CreatRope";
+		public const string ChangePlayerCompnentState="ChangePlayerCompnentState";
+		public const string AddPlayerJointCompnent="AddPlayerJointCompnent";
+		public const string DeletePlayerCompnent="DeletePlayerCompnent";
+		
 
 
 	}

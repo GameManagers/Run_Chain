@@ -6,6 +6,7 @@ public enum PlayerState{//人物状态
 	Jumping,
 	Atking,
 	OnChain,
+	Fall,
 	Died
 }
 
@@ -35,7 +36,6 @@ public class PlayerBasic{
 	//past
 	public float angle{get;set;}//要创建的锁链的角度
 	public Vector3 mouse_down{get;set;}//按下时的位置
-
 
 	 public PlayerBasic(){
 		Level = 0;

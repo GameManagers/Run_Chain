@@ -1,10 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CreatChainPast{
-	public float distance;
-	public Vector3 connect_point;
-	public float angle;
+
+public class PastPlayerCompenetState{
+	//about creat rope
+	public bool isKinematic;
+	public bool isTrigger;
+	public float mass;
+}
+
+public class PastAddJointCompnent{
+	public string Compnent_type;
+	public Rigidbody connect;
+	public PastAddJointCompnent(string s,Rigidbody c){
+		Compnent_type = s;
+		connect = c;
+	}
 }
 
 public class PastSingle{

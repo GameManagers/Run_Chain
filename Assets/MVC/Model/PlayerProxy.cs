@@ -13,18 +13,18 @@ public class PlayerProxy : Proxy {
 	} 
 
 	public void Move(){
-		if(Data.curPlayState==PlayerState.Running || Data.curPlayState==PlayerState.Jumping){
-			SendNotification(NotificationConstant.playerMediator.DeleteCharacterJoint, Data);  
+		if(Data.curPlayState==PlayerState.Running || Data.curPlayState==PlayerState.Jumping || Data.curPlayState==PlayerState.Fall){
 			SendNotification(NotificationConstant.playerMediator.PlayerRunMove, Data);  
 		}
 
 	}
 
 	public void Jump(){
-		if (Data.curPlayState != PlayerState.Jumping) {
-			Data.CurJump = 0;
-			SendNotification(NotificationConstant.playerMediator.ResetJumpAnimator, Data);  
+		SendNotification(NotificationConstant.playerMediator.DeletePlayerCompnent);  
+		if (Data.curPlayState != PlayerState.Jumping && Data.curPlayState != PlayerState.Fall) {
+			SendNotification(NotificationConstant.playerCommand.ResetJumpData);  
 		}
+
 		if (Data.CurJump<2) {
 			Data.CurJump+=1;
 			Data.curPlayState = PlayerState.Jumping;
@@ -32,11 +32,15 @@ public class PlayerProxy : Proxy {
 		}
 	}	
 
+	public void ResetJumpData(){
+		Data.CurJump = 0;
+		SendNotification(NotificationConstant.playerMediator.ResetJumpAnimator, Data);  
+	}
+
 	public void CollisionBase(){
-		if(Data.curPlayState==PlayerState.Jumping){
-			Data.CurJump = 0;
+		if(Data.curPlayState==PlayerState.Jumping ||Data.curPlayState==PlayerState.Fall){
 			Data.curPlayState = PlayerState.Running;
-			SendNotification(NotificationConstant.playerMediator.ResetJumpAnimator, Data);  
+			SendNotification(NotificationConstant.playerCommand.ResetJumpData);  
 		}
 	}
 
@@ -65,16 +69,21 @@ public class PlayerProxy : Proxy {
 			float angle = tool.getAngle (direction,Vector3.right);
 			if (direction.x >= 0 && direction.y >= 0 && direction.z >= 0) {
 				Data.angle=angle;
-				SendNotification(NotificationConstant.playerMediator.JudgeCreatChain, Data);  
+
+				PastPlayerCompenetState past=new PastPlayerCompenetState();
+				past.isKinematic=true;
+				past.isTrigger=true;
+				past.mass=8f;
+				SendNotification(NotificationConstant.playerMediator.ChangePlayerCompnentState,past);
+
+				Data.curPlayState=PlayerState.OnChain;
+				SendNotification(NotificationConstant.playerMediator.CreatRope,Data);
 			}
 		}
 		Data.mouse_down=Vector3.zero;
 	}
 
-	public void OnChain(PastSingle past){
-		Data.curPlayState=PlayerState.OnChain;
-		SendNotification(NotificationConstant.playerMediator.AddCharacterJoint, past);  
-	}
+
 
 	public void inAtkArea(PastSingle past){
 		Data.TriggerTimes += 1;
@@ -105,7 +114,7 @@ public class PlayerProxy : Proxy {
 			if(Data.curMonster.name.Equals(Tags.monster_type.smallBoss)){
 				Data.curMonster.GetComponent<SmallBoss>().Rebound(Data.smallBossRe);
 			}else{
-				past.obj.GetComponent<Player>().DestroyGameObject(Data.curMonster);
+				past.obj.GetComponent<Player>().DestroyObject(Data.curMonster);
 			}
 
 			Data.Monster+=1;
@@ -131,6 +140,12 @@ public class PlayerProxy : Proxy {
 		//改变UI
 
 		SendNotification(NotificationConstant.UIMediator.ChangeHpUI, Data);
+	}
+
+	public void ChainStateToFallState(){
+		if (Data.curPlayState == PlayerState.OnChain) {
+			Data.curPlayState =PlayerState.Fall;
+		}
 	}
 	
 

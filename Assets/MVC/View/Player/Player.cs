@@ -14,8 +14,10 @@ public class Player : MonoBehaviour {
 		RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerCommand.PlayerMove);
 
 		RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerCommand.JuageMonsterDistance,past);
+
 	}
-	
+
+
 	void OnCollisionEnter(Collision other) {//任务碰撞检测
 
 		if (other.collider.CompareTag (Tags.tag.Base)) {//碰到地面
@@ -27,10 +29,6 @@ public class Player : MonoBehaviour {
 			RunFacade.getInstance.sendNotificationCommand(NotificationConstant.CameraCommand.ReStartCameraCommond);
 		}
 
-		if (other.collider.tag.Equals (Tags.tag.Chain)) {//碰到锁链
-			PastSingle past=new PastSingle(other.collider.gameObject);
-			RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerCommand.OnChainCommand,past);
-		}
 
 		if (other.collider.tag.Equals (Tags.tag.Monster)) {//碰到怪兽
 			RunFacade.getInstance.sendNotificationCommand(NotificationConstant.MonsterCommand.MonsterAtk);
@@ -69,12 +67,9 @@ public class Player : MonoBehaviour {
 		RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerMediator.AtkMediator,past);
 	}
 
+	
 
-	public void DestroyPlayerCharacterJoint(CharacterJoint cj){
-		Destroy (cj);
-	}
-
-	public void DestroyGameObject(GameObject obj){
+	public void DestroyObject(Object obj){
 		Destroy (obj);
 	}
 

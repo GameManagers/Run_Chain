@@ -23,4 +23,6 @@ public class Tool{
 		float angle = Mathf.Acos (Vector3.Dot (direction.normalized, anxis)) * Mathf.Rad2Deg;
 		return angle;
 	}
+	
+
 }

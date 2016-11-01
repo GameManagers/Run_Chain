@@ -51,10 +51,6 @@ public class PlayerCommand : SimpleCommand{
 			proxy.MouseUp();
 		}break;
 
-		case NotificationConstant.playerCommand.OnChainCommand:
-		{
-			proxy.OnChain(recive);
-		}break;
 
 		case NotificationConstant.playerCommand.AtkMonsterArea:
 		{
@@ -73,10 +69,17 @@ public class PlayerCommand : SimpleCommand{
 
 		case NotificationConstant.playerCommand.ChangeHp:
 		{
-			Debug.Log(recive.i);
 			proxy.ChangeHp(recive);
 		}break;
 
+		case NotificationConstant.playerCommand.ChainStateToFallState:
+		{
+			proxy.ChainStateToFallState();
+		}break;
+		case NotificationConstant.playerCommand.ResetJumpData:
+		{
+			proxy.ResetJumpData();
+		}break;
 
 
 		}  
