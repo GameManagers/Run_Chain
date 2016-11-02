@@ -53,14 +53,6 @@ public class Boss : MonoBehaviour {
 		float t = float.Parse (str3);
 		if(other.collider.name.Equals(Tags.monster_type.smallBoss)){
 			count++;
-			//if(count==1){
-			//	past.c=Color.black;
-			//	RunFacade.getInstance.sendNotificationCommand (NotificationConstant.MonsterMediator.ChangeBossColor, past);
-			//} 
-			//if(count==2){
-			//	past.c=Color.blue;
-			//	RunFacade.getInstance.sendNotificationCommand (NotificationConstant.MonsterMediator.ChangeBossColor, past);
-			//} 
 			if (count == n) {
 				Destroy (this.gameObject);
 			}

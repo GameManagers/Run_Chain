@@ -18,31 +18,8 @@ public class MonsterItem : MonoBehaviour
 
     PastSingle past;
 
-    public int Id
-    {
-        get
-        {
-            return id;
-        }
-
-        set
-        {
-            id = value;
-        }
-    }
-
-    public string Name
-    {
-        get
-        {
-            return name;
-        }
-
-        set
-        {
-            name = value;
-        }
-    }
+	public int Id{ get; set;}
+	public string Name{ get; set;}
 
     void Start()
     {
@@ -94,10 +71,10 @@ public class MonsterItem : MonoBehaviour
     public void die()
     {
         PastMonsterCompent past = new PastMonsterCompent(this.gameObject, true, true);
-        RunFacade.getInstance.sendNotificationCommand(NotificationConstant.MonsterMediator.ChangeMonsterCompent, past);
+        RunFacade.getInstance.SendNotification(NotificationConstant.MonsterMediator.ChangeMonsterCompent, past);
 
         PastAnimator pastA = new PastAnimator(this.gameObject, Tags.animator_type.Trigger, Tags.animator_monster.Die);
-        RunFacade.getInstance.sendNotificationCommand(NotificationConstant.MonsterMediator.ChangeMonsterAnimation, pastA);
+		RunFacade.getInstance.SendNotification(NotificationConstant.MonsterMediator.ChangeMonsterAnimation, pastA);
 
         Destroy(gameObject, 1f);
     }

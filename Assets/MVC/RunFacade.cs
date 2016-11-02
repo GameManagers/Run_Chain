@@ -61,12 +61,14 @@ public class RunFacade : Facade,IFacade {
 		RegisterCommand(NotificationConstant.playerCommand.CollisionStay,typeof(PlayerCommand));
 		RegisterCommand(NotificationConstant.playerCommand.MouseLeftDown,typeof(PlayerCommand));
 		RegisterCommand(NotificationConstant.playerCommand.MouseLeftUP,typeof(PlayerCommand));
-		RegisterCommand(NotificationConstant.playerCommand.OnChainCommand,typeof(PlayerCommand));
 		RegisterCommand(NotificationConstant.playerCommand.AtkMonsterArea,typeof(PlayerCommand));
 		RegisterCommand(NotificationConstant.playerCommand.JuageMonsterDistance,typeof(PlayerCommand));
 		RegisterCommand(NotificationConstant.playerCommand.AtkMonster,typeof(PlayerCommand));
 		RegisterCommand(NotificationConstant.playerCommand.ChangeHp,typeof(PlayerCommand));
         RegisterCommand(NotificationConstant.playerCommand.ChangeCoin, typeof(PlayerCommand));
+
+		RegisterCommand(NotificationConstant.playerCommand.ChainStateToFallState,typeof(PlayerCommand));
+		RegisterCommand(NotificationConstant.playerCommand.ResetJumpData,typeof(PlayerCommand));
     }
 
 	void addRegisterCameraCommand(){

@@ -26,7 +26,7 @@ public class Tags
 
         //人物
         public const string Player = "Player";
-        public const string Chain = "Chain";
+		public const string Rope = "Rope";
 
         //怪兽
         public const string Monster = "Monster";
@@ -36,11 +36,18 @@ public class Tags
         public const string Terrain = "Terrain";
     };
 
+	public struct PlayerChilds{
+		public const int PlayerSkin = 0;
+		public const int Cover1 = 1;
+		public const int Cover2 = 2;
+		public const int Send_target = 3;
+	};
+
     public struct layer
     {
         public const string Player = "Player";
         public const string bg = "bg";
-    }
+	};
 
     /*Animator参数类型*/
     public struct animator_type
@@ -52,8 +59,7 @@ public class Tags
     /*预制体*/
     public struct prb_path
     {
-        public const string Chain = "pfb/chain";
-        public const string line = "pfb/line";
+		public const string Rope="pfb/Rope";
         public const string Map_Normal_path = "pfb/Normal/";
         public const string Map_Double_path = "pfb/double/";
         public const string Map_Chains_path = "pfb/chains/";

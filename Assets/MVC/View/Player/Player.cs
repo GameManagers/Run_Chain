@@ -33,11 +33,6 @@ public class Player : MonoBehaviour
             RunFacade.getInstance.sendNotificationCommand(NotificationConstant.CameraCommand.ReStartCameraCommond);
         }
 
-        if (other.collider.tag.Equals(Tags.tag.Chain))
-        {//碰到锁链
-            PastSingle past = new PastSingle(other.collider.gameObject);
-            RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerCommand.OnChainCommand, past);
-        }
 
         if (other.collider.tag.Equals(Tags.tag.Monster))
         {//碰到怪兽
@@ -73,11 +68,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void CreatChain(Vector3 connect_point, float angle)
-    {
-        GameObject prb = Resources.Load<GameObject>(Tags.prb_path.Chain);//取预制体 
-        Instantiate(prb, connect_point, Quaternion.Euler(new Vector3(0, 0, angle)));
-    }
 
     /*攻击*/
     public void AtkButtonDown()
@@ -86,18 +76,11 @@ public class Player : MonoBehaviour
         RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerMediator.AtkMediator, past);
     }
 
-    public void DestroyPlayerCharacterJoint(CharacterJoint cj)
-    {
-        Destroy(cj);
-    }
-
-    public void DestroyGameObject(GameObject obj)
-    {
-        Destroy(obj);
-    }
-
-    public void InstantiateGameOjbect(GameObject obj)
-    {
-        Instantiate(obj);
-    }
+	public void DestroyObject(Object obj){
+		Destroy (obj);
+	}
+	
+	public void InstantiateGameOjbect(GameObject obj){
+		Instantiate (obj);
+	}
 }

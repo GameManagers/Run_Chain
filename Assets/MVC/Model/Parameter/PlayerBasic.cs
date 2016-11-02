@@ -6,6 +6,7 @@ public enum PlayerState{//人物状态
 	Jumping,
 	Atking,
 	OnChain,
+	Fall,
 	Died
 }
 

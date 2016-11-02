@@ -10,7 +10,6 @@ public class shengchengboss : MonoBehaviour {
 	private int k=0;
 	// Use this for initialization
 	void Start () {
-		//run_speed = Player.getInstance.getRunSpeed();
 		offset.x=kong.transform.position.x-player.transform.position.x;
 		offset.y = 0f;
 		offset.z = 0f;
@@ -19,12 +18,10 @@ public class shengchengboss : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		PlayerMove();
+		BossMove();
 
 	}
-	void PlayerMove(){
-		//this.transform.Translate (Vector3.right*run_speed* Time.deltaTime,Space.World);
-		//pos=player.transform.position+offset;
+	void BossMove(){
 		pos=new Vector3(player.transform.position.x+offset.x,kong.transform.position.y,kong.transform.position.z);
 		kong.transform.position = pos;
 
