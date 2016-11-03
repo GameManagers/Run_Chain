@@ -27,6 +27,7 @@ public class Tags
         //人物
         public const string Player = "Player";
 		public const string Rope = "Rope";
+        public const string Male = "Male";
 
         //怪兽
         public const string Monster = "Monster";
