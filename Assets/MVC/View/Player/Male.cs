@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Coin : MonoBehaviour {
-
+public class Male : MonoBehaviour {
     PastSingle past;
     // Use this for initialization
     void Start()
@@ -12,11 +11,11 @@ public class Coin : MonoBehaviour {
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag.Equals(Tags.tag.Male))
+        if (other.tag.Equals(Tags.tag.coin))
         {
             PastSingle past = new PastSingle(other.gameObject);
             RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerCommand.ChangeCoin, past);
-            Destroy(this.gameObject);
+            Destroy(other.gameObject);
         }
     }
 }
