@@ -58,14 +58,14 @@ public class Player : MonoBehaviour
             PastSingle past = new PastSingle(other.gameObject);
             RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerCommand.AtkMonsterArea, past);
         }
-        if (other.gameObject.tag.Equals(Tags.tag.coin))
-        {//碰到金币
-            //PastCoinCompent pastA = new PastCoinCompent(other.gameObject, true);
-            //RunFacade.getInstance.sendNotificationCommand(NotificationConstant.TerrainMediator.ChangeCoinCompent, pastA);
-            PastSingle past = new PastSingle(other.gameObject);
-            RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerCommand.ChangeCoin, past);
-            Destroy (other.gameObject);
-        }
+        //if (other.gameObject.tag.Equals(Tags.tag.coin))
+        //{//碰到金币
+        //    //PastCoinCompent pastA = new PastCoinCompent(other.gameObject, true);
+        //    //RunFacade.getInstance.sendNotificationCommand(NotificationConstant.TerrainMediator.ChangeCoinCompent, pastA);
+        //    PastSingle past = new PastSingle(other.gameObject);
+        //    RunFacade.getInstance.sendNotificationCommand(NotificationConstant.playerCommand.ChangeCoin, past);
+        //    Destroy (other.gameObject);
+        //}
     }
 
 
