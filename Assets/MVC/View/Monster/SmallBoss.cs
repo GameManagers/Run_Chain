@@ -19,9 +19,13 @@ public class SmallBoss : MonoBehaviour {
 		}
 		if(collision.collider.name == Tags.tag.Player) {
 			Destroy(gameObject);
-		}
-		
-	}
+        }
+        if (collision.collider.name == Tags.tag.Monster)
+        {
+            Destroy(gameObject);
+        }
+
+    }
 
     void DestorySelf()
     {

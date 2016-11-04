@@ -65,6 +65,16 @@ public class MonsterItem : MonoBehaviour
                     RunFacade.getInstance.sendNotificationCommand(NotificationConstant.MonsterMediator.ChangeMonsterCompent, past);
                 }
                 break;
+            case Tags.monster_type.smallBoss:
+                {//撞到小Boss
+                    die();
+                }
+                break;
+            case Tags.tag.Rope:
+                {//撞到小Boss
+                    die();
+                }
+                break;
         }
 
     }
