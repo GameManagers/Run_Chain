@@ -70,11 +70,11 @@ public class MonsterItem : MonoBehaviour
                     die();
                 }
                 break;
-            case Tags.tag.Rope:
-                {//撞到小Boss
-                    die();
-                }
-                break;
+            //case Tags.tag.Rope:
+            //    {//撞到小Boss
+            //        die();
+            //    }
+            //    break;
         }
 
     }
